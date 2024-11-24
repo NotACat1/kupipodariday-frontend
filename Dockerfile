@@ -24,8 +24,6 @@ RUN npm run build
 # Продакшен-образ
 FROM nginx:stable-alpine
 COPY --from=builder /app/build /usr/share/nginx/html
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Экспорт порта из .env
 ENV PORT=$PORT_FRONTEND
