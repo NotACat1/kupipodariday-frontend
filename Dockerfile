@@ -13,11 +13,9 @@ COPY . .
 
 # Передаем ARG в процессе сборки
 ARG BACKEND_HOST
-ARG BACKEND_PORT
 
 # Эти переменные будут доступны в React
 ENV REACT_APP_BACKEND_HOST=$BACKEND_HOST
-ENV REACT_APP_BACKEND_PORT=$BACKEND_PORT
 
 RUN npm run build
 
